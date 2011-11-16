@@ -7,6 +7,7 @@ var express = require('express')
 , jsdom = require('jsdom')
 , request = require('request')
 , url = require('url')
+, routes = require('./routes')
 , app = module.exports = express.createServer();
 
 // Configuration
@@ -76,12 +77,7 @@ app.get('/', function (req, res) {
     });
 });
 
-app.get('/watch/:id', function (req, res) {
-   res.render('video', {
-      title: 'Watch',
-      vid: req.params.id
-   });
-});
+app.get('/watch/:id', routes.watch);
 
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

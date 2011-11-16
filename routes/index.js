@@ -1,7 +1,10 @@
 /*
- * GET home page.
+ * GET Individual Video
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' })
+exports.watch = function (req, res) {
+   res.render('video', {
+      title: 'Watch',
+      vid: req.params.id
+   });
 };
