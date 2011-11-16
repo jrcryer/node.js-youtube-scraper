@@ -1,9 +1,14 @@
-/*
- * GET Individual Video
+/**
+ * Module dependencies.
  */
+
 var jsdom = require('jsdom')
 , request = require('request')
 , url = require('url');
+
+/**
+ * GET List of videos
+ */
 
 exports.list  = function (req, res) {
     //Tell the request that we want to fetch youtube.com, send the results to a callback function
@@ -50,6 +55,10 @@ exports.list  = function (req, res) {
         });
     });
 };
+
+/**
+ * GET An individual video
+ */
 exports.watch = function (req, res) {
    res.render('video', {
       title: 'Watch',
